@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react'
+import Hero from './components/Hero.jsx'
+import Navbar from './components/MainNavbar.jsx';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div className="bg-blue-500 text-black p-4 rounded-lg">
-        <h1 className="text-2xl font-bold">Hello World!</h1>
-      </div>
-    </>
-  );
+    <div>
+      <Navbar/>
+      <Hero/>
+    </div>
+  )
 }
 
-export default App;
+export default App
