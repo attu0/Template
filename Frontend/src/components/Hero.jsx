@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
 import "./Hero.css";
+import mudraImg from "../assets/real.png";
 
-const Hero = () => {
+function Hero() {
   return (
-    <div>
-      <h1>HELLO</h1>
+    <div className="hero-wrapper">
+      <div className="hero-container d-flex flex-column justify-content-center align-items-center vh-100">
+        <img src={mudraImg} alt="Logo" className="img-fluid hero-img mb-4" />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

@@ -1,0 +1,51 @@
+/* Hero.css */
+.hero-img {
+  width: 466px;
+  height: 659px;
+  opacity: 50%;
+}
+.hero-img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.hero-container{
+    background: linear-gradient(to right, #000000,#350202);
+}
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: rgb(227, 139, 8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
+
+.dropzone-inline {
+  width: 75vw; /* fills most of the viewport width */
+  height: 60vh; /* fills most of the viewport height */
+  padding: 2rem;
+  background-color: #2c0a0a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(221, 134, 4, 0.6);
+  animation: fadeIn 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

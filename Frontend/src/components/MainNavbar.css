@@ -1,0 +1,8 @@
+/* Hero.css or Navbar.css */
+.navbar-black {
+  background-color: #240101 !important;
+}
+.navbar-black .navbar-brand,
+.navbar-black .nav-link {
+  color: rgb(227, 139, 8) !important;
+}

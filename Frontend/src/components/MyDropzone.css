@@ -1,0 +1,26 @@
+.dropzone {
+  border: 2px dashed #888;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Base button style */
+.btn-submit,
+.btn-browse {
+  background-color: rgb(227, 139, 8);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.btn-submit:hover,
+.btn-browse:hover {
+  background-color: #70df01; /* Green on hover */
+}
