@@ -93,3 +93,10 @@
 .test-wrapper > button:hover {
   background-color: #6b1a10;
 }
+
+.response-box {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+}

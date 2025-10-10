@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-function Response() {
+function Response({ predictions }) {
+  const label = predictions[0]?.label || "No prediction available";
+
   return (
-    <div>
-      <p>
-        This is your Response
-      </p>
+    <div className="response-box">
+      <p>{label}</p>
     </div>
-  )
+  );
 }
 
-export default Response
+export default Response;
