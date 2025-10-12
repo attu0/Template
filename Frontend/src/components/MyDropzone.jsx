@@ -1,13 +1,17 @@
 import { useDropzone } from "react-dropzone";
 import { useState, useCallback } from "react";
+import "./MyDropzone.css";
 
 function MyDropzone({ onFilesSelected, onPredictionReceived }) {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
-  const onDrop = useCallback((acceptedFiles) => {
-    setSelectedFiles(acceptedFiles);
-    onFilesSelected(acceptedFiles); // lift files to parent
-  }, [onFilesSelected]);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      setSelectedFiles(acceptedFiles);
+      onFilesSelected(acceptedFiles); // lift files to parent
+    },
+    [onFilesSelected]
+  );
 
   const { getRootProps, getInputProps, open } = useDropzone({
     onDrop,
@@ -46,13 +50,16 @@ function MyDropzone({ onFilesSelected, onPredictionReceived }) {
       <div
         {...getRootProps({ className: "dropzone" })}
         style={{
-          border: "2px dashed #ccc",
-          padding: "20px",
-          minHeight: "250px",
+          height: "300px",
+          width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          // marginBottom : "75px",
+          overflow: "hidden", // prevents content from expanding the box
+          position: "relative", // allows absolute positioning if needed
+          boxSizing: "border-box",
         }}
       >
         <input {...getInputProps()} />
@@ -71,8 +78,9 @@ function MyDropzone({ onFilesSelected, onPredictionReceived }) {
               alt="preview"
               style={{
                 maxWidth: "100%",
-                maxHeight: "200px",
+                maxHeight: "100%",
                 borderRadius: "8px",
+                alignContent: "center"
               }}
             />
           ))
@@ -80,7 +88,7 @@ function MyDropzone({ onFilesSelected, onPredictionReceived }) {
       </div>
 
       {selectedFiles.length > 0 && (
-        <div className="text-center mt-3">
+        <div className="text-center">
           <button onClick={handleSubmit} className="btn-submit">
             Submit Image
           </button>
