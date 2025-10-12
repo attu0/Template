@@ -7,6 +7,7 @@ import mediapipe as mp
 import cv2
 import io
 from PIL import Image
+from llm_response import generate_story
 
 # ------------------- CONFIG -------------------
 MODEL_PATH = "./hand_gesture_model.h5"
@@ -85,10 +86,13 @@ async def predict(file: UploadFile = File(...)):
             pred_label = LABELS[np.argmax(preds)]
             confidence = float(np.max(preds))
 
+            story = generate_story(pred_label)
+
             predictions.append({
                 "label": pred_label,
                 "confidence": confidence,
-                "bbox": [x_min, y_min, x_max, y_max]
+                "bbox": [x_min, y_min, x_max, y_max],
+                "story": story
             })
     else:
         predictions.append({"label": "No hand detected", "confidence": 0.0, "bbox": None})

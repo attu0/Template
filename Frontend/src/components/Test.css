@@ -97,21 +97,25 @@
 .response-box {
   margin-top: 50px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fffdec;
   margin-inline: auto;
   overflow: hidden;
-  white-space: nowrap;
-  width: fit-content;
-  animation: typing 3s steps(22) forwards;
+  white-space: normal;
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* Typing animation */
-@keyframes typing {
+/* Optional fade-in animation */
+@keyframes fadeIn {
   from {
-    width: 0;
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    width: 22ch; /* Adjust based on character count */
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+

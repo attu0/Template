@@ -1,7 +1,7 @@
 import React from "react";
 
 function Response({ predictions }) {
-  const label = predictions[0]?.label || "No prediction available";
+  const label = predictions[0]?.story || "No prediction available";
 
   return (
     <div className="response-box">
