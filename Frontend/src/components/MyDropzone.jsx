@@ -2,6 +2,9 @@ import { useDropzone } from "react-dropzone";
 import { useState, useCallback } from "react";
 import "./MyDropzone.css";
 
+const API_BASE =
+  import.meta.env.VITE_API_URL || "https://mudra-backend-xset.onrender.com";
+
 function MyDropzone({ onFilesSelected, onPredictionReceived }) {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
@@ -27,7 +30,11 @@ function MyDropzone({ onFilesSelected, onPredictionReceived }) {
       formData.append("file", file);
     });
 
-    fetch("http://localhost:8000/predict", {
+    // fetch("http://localhost:8000/predict", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    fetch(`${API_BASE}/predict`, {
       method: "POST",
       body: formData,
     })
@@ -80,7 +87,7 @@ function MyDropzone({ onFilesSelected, onPredictionReceived }) {
                 maxWidth: "100%",
                 maxHeight: "100%",
                 borderRadius: "8px",
-                alignContent: "center"
+                alignContent: "center",
               }}
             />
           ))
